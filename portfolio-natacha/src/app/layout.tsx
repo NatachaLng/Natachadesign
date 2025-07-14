@@ -13,10 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
-      </head>
+      <head />
       <body
         className={"font-manrope antialiased"}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
