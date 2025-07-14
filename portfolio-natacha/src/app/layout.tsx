@@ -19,6 +19,7 @@ export default function RootLayout({
       </head>
       <body
         className={"font-manrope antialiased"}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         style={{ '--accent-color': '#a259ff' } as any}
       >
         {children}
