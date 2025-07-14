@@ -1,21 +1,8 @@
-import Image from "next/image";
 import GooeyNavHeader from "../components/GooeyNavHeader";
-import InfiniteCategoryNav from "../components/InfiniteCategoryNav";
-import DecryptedText from "../blocks/TextAnimations/DecryptedText/DecryptedText";
 import ProfileCard from "../blocks/Components/ProfileCard/ProfileCard";
 import LogoCloud from "../components/LogoCloud";
 import ProgressiveRevealSection from "../components/ProgressiveRevealSection";
 import ChromaGrid from "../blocks/Components/ChromaGrid/ChromaGrid";
-import CTAButton from "../components/CTAButton";
-
-const stockImages = [
-  "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
-  "https://images.unsplash.com/photo-1519985176271-adb1088fa94c",
-  "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1",
-  "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99",
-];
 
 export default function Home() {
   return (
