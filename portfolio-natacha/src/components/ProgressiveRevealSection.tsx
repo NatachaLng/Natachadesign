@@ -53,12 +53,12 @@ export default function ProgressiveRevealSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full flex items-start justify-center"
-      style={{ background: "none", minHeight: sectionHeight, height: sectionHeight, paddingTop: '40vh' }}
+      className="relative w-full flex items-start justify-center pt-40 pb-6"
+      style={{ background: "none" }}
     >
       <div
-        className="sticky w-full max-w-4xl mx-auto px-4 sm:px-6"
-        style={{ zIndex: 2, top: '50%', transform: 'translateY(-50%)' }}
+        className="w-full max-w-4xl mx-auto px-4 sm:px-6"
+        style={{ zIndex: 2 }}
       >
         <div className="text-left select-none pointer-events-none"
         >
@@ -94,8 +94,7 @@ export default function ProgressiveRevealSection() {
           })()}
         </div>
       </div>
-      {/* Spacer to ensure smooth transition to next section */}
-      <div style={{ minHeight: 8 }} />
+      {/* Removed spacer for minimal gap to next section */}
     </section>
   );
 } 

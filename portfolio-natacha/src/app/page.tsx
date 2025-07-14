@@ -68,8 +68,8 @@ export default function Home() {
             </p>
           </div>
           {/* ProfileCard center, grows to fill available space */}
-          <div className="flex items-center justify-center w-full flex-grow" style={{minHeight: 0}}>
-            <div className="w-full max-w-sm sm:max-w-md mx-auto flex items-center justify-center h-full" style={{height: '100%', maxHeight: '100%', minHeight: 0}}>
+          <div className="flex items-center justify-center w-full">
+            <div className="w-full max-w-sm sm:max-w-md mx-auto flex items-center justify-center">
               <ProfileCard
                 behindGradient={undefined}
                 innerGradient={undefined}
@@ -78,7 +78,7 @@ export default function Home() {
             </div>
           </div>
           {/* LogoCloud bottom */}
-          <div className="w-full flex items-center justify-center mt-6 flex-shrink-0" style={{minHeight: '120px'}}>
+          <div className="w-full flex items-center justify-center mt-20 flex-shrink-0" style={{minHeight: '120px'}}>
             <LogoCloud />
           </div>
         </div>
