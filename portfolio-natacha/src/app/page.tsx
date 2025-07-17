@@ -1,8 +1,13 @@
+"use client";
+import React from "react";
 import GooeyNavHeader from "../components/GooeyNavHeader";
 import ProfileCard from "../blocks/Components/ProfileCard/ProfileCard";
 import LogoCloud from "../components/LogoCloud";
 import ProgressiveRevealSection from "../components/ProgressiveRevealSection";
 import ChromaGrid from "../blocks/Components/ChromaGrid/ChromaGrid";
+import PortfolioProjectCard from "../components/PortfolioProjectCard";
+import StackedPortfolioCards from "../components/StackedPortfolioCards";
+import ReviewsSection from "@/components/ReviewsSection";
 
 export default function Home() {
   return (
@@ -90,78 +95,11 @@ export default function Home() {
       {/* Progressive Reveal Section */}
       <ProgressiveRevealSection />
 
-      {/* Portfolio Gallery Section */}
-      <section className="w-full py-4 sm:py-6 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-6 text-center">
-            <span className="inline-block px-5 py-2 rounded-full bg-white/10 text-white text-sm font-semibold shadow-sm border border-white/20 backdrop-blur-md">Portfolio Gallery</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center text-white">
-            Every pixel with <span className="italic font-serif">purpose</span>.
-          </h2>
-          <p className="text-white/80 text-center text-base sm:text-lg max-w-xl mx-auto mb-6 sm:mb-8">
-            From early research to polished interfaces, each case study reflects a design process rooted in purpose, empathy, and measurable outcomes.
-          </p>
-                  <ChromaGrid
-            items={[
-              {
-                image: "/Portfolio/1.avif",
-                title: "AI Gamified Learning Platform",
-                subtitle: "Make learning fun and engaging",
-                handle: "@seedup",
-                date: "2025",
-                tags: ["Mobile App", "AI", "BtoBtoC"],
-                url: "#"
-              },
-              {
-                image: "/Portfolio/2.avif",
-                title: "Booking Experience for employees",
-                subtitle: "Make booking easy and efficient",
-                handle: "@touloisirs",
-                date: "2024",
-                tags: ["Web app", "Mobile first", "BtoBtoC"],
-                url: "#"
-              },
-              {
-                image: "/Portfolio/3.avif",
-                title: "Creative automation tool",
-                subtitle: "Make AI work for you",
-                handle: "@markcopyAI",
-                date: "2022",
-                tags: ["WebApp", "AI", "BtoB"],
-                url: "#"
-              },
-              {
-                image: "/Portfolio/4.avif",
-                title: "AI personality analysis tool",
-                subtitle: "Make AI help you understand people better",
-                handle: "@myprofilia",
-                date: "2023",
-                tags: ["WebApp", "AI", "BtoB"],
-                url: "#"
-              },
-              {
-                image: "/Portfolio/5.avif",
-                title: "Your pocket AI companion",
-                subtitle: "Make AI Accessible",
-                handle: "@lia27",
-                date: "2024",
-                tags: ["Mobile App", "AI", "BtoC"],
-                url: "#"
-              },
-              {
-                image: "/Portfolio/6.avif",
-                title: "Facilitate coaching experience",
-                subtitle: "Make coaching accessible",
-                handle: "@simundia",
-                date: "2022",
-                tags: ["WebApp", "BtoB"],
-                url: "#"
-              }
-            ]}
-          />
-        </div>
-      </section>
+      {/* Portfolio Gallery Section Heading (restored for context) */}
+      <StackedPortfolioCards />
+      
+       {/* Reviews Section */}
+       <ReviewsSection />
     </div>
   );
 }

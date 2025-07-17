@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import CustomCursor from "../components/CustomCursor";
+import { CursorProvider } from "../components/CursorContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +21,10 @@ export default function RootLayout({
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         style={{ '--accent-color': '#a259ff' } as any}
       >
-        {children}
+        <CursorProvider>
+          <CustomCursor />
+          {children}
+        </CursorProvider>
       </body>
     </html>
   );

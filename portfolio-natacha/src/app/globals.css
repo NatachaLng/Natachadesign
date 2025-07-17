@@ -27,9 +27,8 @@ body {
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
 }
 
-html, body {
-  scroll-behavior: smooth;
-  font-family: 'Satoshi', Arial, sans-serif;
+html, body, a, button, * {
+  cursor: none !important;
 }
 
 em, i, .font-serif, [style*="font-style: italic"] {
