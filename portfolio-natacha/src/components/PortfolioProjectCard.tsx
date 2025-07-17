@@ -1,5 +1,4 @@
 import React from "react";
-import ShinyText from './ShinyText';
 import { useCursor } from "./CursorContext";
 
 export interface PortfolioProjectCardProps {
@@ -11,17 +10,6 @@ export interface PortfolioProjectCardProps {
   tags?: string[];
   haloColor?: string; // Optional prop for the halo color
 }
-
-// Glassmorphism card effect
-const cardStyle = `
-.card {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
-}
-`;
 
 const PortfolioProjectCard: React.FC<PortfolioProjectCardProps> = ({
   title,

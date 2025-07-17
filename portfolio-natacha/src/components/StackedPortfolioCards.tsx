@@ -86,23 +86,28 @@ const cardsData = [
 
 const CARD_HEIGHT = 500; // px
 const CARD_MARGIN = 40; // px (increased)
-const SECTION_PADDING = 64; // px
 
 const StackedPortfolioCards = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const numCards = cardsData.length;
-  const scrollDistance = (CARD_HEIGHT + CARD_MARGIN) * (numCards - 1);
   const stickyHeight = '100vh';
   const minHeight = ((CARD_HEIGHT + CARD_MARGIN) * (numCards - 1)) + window.innerHeight;
 
-  // Ensure sticky works: section minHeight must be stickyHeight + viewportHeight
-  let viewportHeight = 800;
-  if (typeof window !== 'undefined') {
-    viewportHeight = window.innerHeight;
-  }
-
   // Framer Motion scroll progress for the section
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
+
+  // Precompute y transforms for each card (fix React Hooks rule)
+  const yTransforms = cardsData.map((_, i) => {
+    const overlap = 0.2;
+    const start = Math.max(0, i / numCards - overlap);
+    const end = (i + 1) / numCards;
+    return useTransform(
+      scrollYProgress,
+      [start, end],
+      [(CARD_HEIGHT + CARD_MARGIN) * i, CARD_MARGIN * i],
+      { clamp: true }
+    );
+  });
 
   // Pin the section for the duration of the stack animation
   // The sticky wrapper is as tall as the stack, and released after
@@ -147,15 +152,7 @@ const StackedPortfolioCards = () => {
           {/* Cards Stack (pinned) */}
           <div style={{ position: "relative", width: "100%", height: CARD_HEIGHT, marginTop: 80 }}>
             {cardsData.map((card, i) => {
-              const overlap = 0.2;
-              const start = Math.max(0, i / numCards - overlap);
-              const end = (i + 1) / numCards;
-              const y = useTransform(
-                scrollYProgress,
-                [start, end],
-                [(CARD_HEIGHT + CARD_MARGIN) * i, CARD_MARGIN * i],
-                { clamp: true }
-              );
+              const y = yTransforms[i];
               const zIndex = 10 + i;
               return (
                 <React.Fragment key={i}>
@@ -177,7 +174,7 @@ const StackedPortfolioCards = () => {
                     }}
                   />
                   <motion.div
-                  key={i}
+                    key={i}
                     style={{
                       position: "absolute",
                       left: 0,
@@ -191,7 +188,7 @@ const StackedPortfolioCards = () => {
                     }}
                     transition={{ type: "spring", stiffness: 120, damping: 20 }}
                   >
-                   <PortfolioProjectCard {...card} haloColor="transparent" />
+                    <PortfolioProjectCard {...card} haloColor="transparent" />
                   </motion.div>
                 </React.Fragment>
               );

@@ -4,8 +4,6 @@ import GooeyNavHeader from "../components/GooeyNavHeader";
 import ProfileCard from "../blocks/Components/ProfileCard/ProfileCard";
 import LogoCloud from "../components/LogoCloud";
 import ProgressiveRevealSection from "../components/ProgressiveRevealSection";
-import ChromaGrid from "../blocks/Components/ChromaGrid/ChromaGrid";
-import PortfolioProjectCard from "../components/PortfolioProjectCard";
 import StackedPortfolioCards from "../components/StackedPortfolioCards";
 import ReviewsSection from "@/components/ReviewsSection";
 
